@@ -1,0 +1,228 @@
+{
+  "package": "SIPAKATAU V2.1 Indonesian voice UI/UX developer implementation",
+  "created": "2026-09-21",
+  "source_repository": "https://github.com/maroamabbarakka/sipakatau",
+  "status": "instructions + concept assets + example code only, no production deployment",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2404,
+      "sha256": "8f59c4f57d821d9272458fabbd577ae710f02f38a166161734d34d141ccdc0c5"
+    },
+    {
+      "path": "assets/icons/audio.svg",
+      "bytes": 365,
+      "sha256": "93ebabd502a4a7b449bdaa76a94fe30ae54046939694fdfee9d96fb698f17995"
+    },
+    {
+      "path": "assets/icons/bantuan.svg",
+      "bytes": 392,
+      "sha256": "539f5ba1f491c2b66450bbcd8ececab0f50b735720b00a93413eab0e0c414b9e"
+    },
+    {
+      "path": "assets/icons/cek.svg",
+      "bytes": 349,
+      "sha256": "2e2ac6347a1a5cdff22ce554c6d18faaf0e8a5828815e4284b4b40600cba88af"
+    },
+    {
+      "path": "assets/icons/inklusif.svg",
+      "bytes": 448,
+      "sha256": "eb1ef4ee79771a19f00f4bfbedbb54544efde6208c373029029fcf2faef16f6d"
+    },
+    {
+      "path": "assets/icons/kategori.svg",
+      "bytes": 503,
+      "sha256": "db16d3366003bed65318176816646be098dfa67f84adb2051ccbac1a33d53151"
+    },
+    {
+      "path": "assets/icons/lacak.svg",
+      "bytes": 385,
+      "sha256": "1e35251740ab3634fc3386a5cc66bbc8e642d7d9fe378eba7a234743a439015a"
+    },
+    {
+      "path": "assets/icons/lapor.svg",
+      "bytes": 387,
+      "sha256": "4027a9448750062a19b469bf043f4de6f02cf4439facb9eea558f197a7f4f330"
+    },
+    {
+      "path": "assets/icons/mikrofon.svg",
+      "bytes": 401,
+      "sha256": "b536baddae4d8b12f650102e6ad19eba64aa736f5671eba9f5907b3c374ac3d5"
+    },
+    {
+      "path": "assets/icons/perhatian.svg",
+      "bytes": 344,
+      "sha256": "de2795a832eec5a0afe4dbbae628bc51d858638c85648c26857782d145caf7f8"
+    },
+    {
+      "path": "assets/icons/petugas.svg",
+      "bytes": 390,
+      "sha256": "247036db0898e0065a93e48e8ac47366c57010d98de73f48a3003b48c0d1b82f"
+    },
+    {
+      "path": "assets/icons/privasi.svg",
+      "bytes": 448,
+      "sha256": "2b200f20bca738ad3bca38481d272ae80cd434e4663b68938e7cf8974696f87b"
+    },
+    {
+      "path": "assets/icons/whatsapp.svg",
+      "bytes": 387,
+      "sha256": "ee65e386b144a822dbc74d86be1ebccca02363e09a86546d8a769c87958ba792"
+    },
+    {
+      "path": "assets/illustrations/00_contact_sheet.png",
+      "bytes": 1799422,
+      "sha256": "19a7444cff63d0d3a489fcfa03db716483c4223c7f6d1a26c1551aa96b914e6f"
+    },
+    {
+      "path": "assets/illustrations/01_konsultasi_pendidikan.png",
+      "bytes": 418495,
+      "sha256": "d0e2f3091b2260b428e5ac3abed694c2b9995a297925088d379122e0aa1f0369"
+    },
+    {
+      "path": "assets/illustrations/01_konsultasi_pendidikan.webp",
+      "bytes": 49998,
+      "sha256": "0b8da98dbc6ddd185f337d7f1e3c8c71af072da71a80927c1503d6b98d00536e"
+    },
+    {
+      "path": "assets/illustrations/02_form_dengan_voice.png",
+      "bytes": 377637,
+      "sha256": "c808bd0a9a632f36bd621b98049e8feee77772e9515acce4b4b772365f232389"
+    },
+    {
+      "path": "assets/illustrations/02_form_dengan_voice.webp",
+      "bytes": 40094,
+      "sha256": "3cab45851e6fefaf7c28648c4c319dbd81d8338023602a192592fda732d4e9c5"
+    },
+    {
+      "path": "assets/illustrations/03_sekolah_inklusif.png",
+      "bytes": 579425,
+      "sha256": "6c5de754e04d347c949d9eb3a52644df033265d2e96f7f89a2bbcbe0d8a91b75"
+    },
+    {
+      "path": "assets/illustrations/03_sekolah_inklusif.webp",
+      "bytes": 85398,
+      "sha256": "e372696093c516e460f51c0e7de0421637ba4059f08b03217864d946715993e9"
+    },
+    {
+      "path": "assets/illustrations/04_routing_pengaduan.png",
+      "bytes": 376237,
+      "sha256": "eb1bb306f83d7958d40f08070a2e6048e726721d5c9ced9f3d9be59df7b05bba"
+    },
+    {
+      "path": "assets/illustrations/04_routing_pengaduan.webp",
+      "bytes": 40370,
+      "sha256": "b2d63d030ef10ffa5e5d0fcb9d3fc0b197e57fda705c7b84ae758b4e2602945c"
+    },
+    {
+      "path": "docs/00_MULAI_DI_SINI.md",
+      "bytes": 3096,
+      "sha256": "a58277c56d9bcf04160d7a8544f642c69b0cd54dd4e16d43ab714085649fd0ef"
+    },
+    {
+      "path": "docs/01_AUDIT_REPO_DAN_BATAS_PERUBAHAN.md",
+      "bytes": 3734,
+      "sha256": "b3f212562c3dc8853195c651ea9b5d397b0b3675e1a09cb47a13a5683ea154c6"
+    },
+    {
+      "path": "docs/02_REFERENSI_SAPA_DAN_ARAH_KREATIF.md",
+      "bytes": 2384,
+      "sha256": "31462de4202fb378aa787c3a52f5669bc2938afb8acca66217d6c752b1106f82"
+    },
+    {
+      "path": "docs/03_DESIGN_SYSTEM_TOKENS.md",
+      "bytes": 2874,
+      "sha256": "61e191505c4b33a382e91f1e228f06fafa47e684205914e3ce0880d056feabf4"
+    },
+    {
+      "path": "docs/04_PETA_HALAMAN_DAN_WIREFRAME.md",
+      "bytes": 2973,
+      "sha256": "547f5beb56cfd104fc78d3bace0adaa5533ae59806d2f9ac762563f877af315b"
+    },
+    {
+      "path": "docs/05_LANDING_KATALOG_LACAK.md",
+      "bytes": 2553,
+      "sha256": "ff6f784066310631dc28d7f426ebca6a1b8bd16bfbd47d968f2d7ea37efacbb6"
+    },
+    {
+      "path": "docs/06_FORM_PENGADUAN_UX_BRANCING.md",
+      "bytes": 3458,
+      "sha256": "b87ca58a2916d4d7b47caa1092c7c91911885e5a76e271be39008519b8eb561c"
+    },
+    {
+      "path": "docs/07_WEB_SPEECH_API_ID_ID_KONTRAK.md",
+      "bytes": 4862,
+      "sha256": "bed8de7729bf9a22da75314838814d47b74e93a9199456665d5ce6a0e21a41e2"
+    },
+    {
+      "path": "docs/08_AUDIO_UX_INTERAKSI_DAN_PRIVASI.md",
+      "bytes": 3125,
+      "sha256": "b642a6298d0e3d802461ef6c1f30edbcbdc4ba493870c31ab762e18a34fd990f"
+    },
+    {
+      "path": "docs/09_NASKAH_AUDIO_BAHASA_INDONESIA.md",
+      "bytes": 7986,
+      "sha256": "df8febf95c6685264b6c7314aa129cc5a6805a91cf8b45d24327308f32034da1"
+    },
+    {
+      "path": "docs/10_FORM_DINAS_MOBILE_FIRST.md",
+      "bytes": 3461,
+      "sha256": "06d098eda84ab8550d62784b623687b2bd5c0da2890e759e280ef33f90215e9b"
+    },
+    {
+      "path": "docs/11_DASHBOARD_DAN_MICROCOPY.md",
+      "bytes": 2403,
+      "sha256": "934d01eb083c2f42075a80c7e53fa975a1c5b12be233901aa55dfc41b1cb14fa"
+    },
+    {
+      "path": "docs/12_ASET_VISUAL_DAN_KREDIT.md",
+      "bytes": 2594,
+      "sha256": "1ffefa058272a7e7ffaef9e084083198079339de3452a99080401ea7090df592"
+    },
+    {
+      "path": "docs/13_MOTION_MOBILE_AKSESIBILITAS.md",
+      "bytes": 2441,
+      "sha256": "f71b8a6873aff7e6a01a3ce2dba83d90709d07ba6bd210e285368097e1722a24"
+    },
+    {
+      "path": "docs/14_INTEGRASI_TANPA_REGRESI_FIREBASE.md",
+      "bytes": 2617,
+      "sha256": "2f2b8deff1d6ed07d8b6a8e20887d2c4a3357710a06bd6b5c7019822bcf4e032"
+    },
+    {
+      "path": "docs/15_MATRIKS_QA_UJI_TERUKUR.md",
+      "bytes": 4382,
+      "sha256": "8ee5e1ff551da9589369549bd05f06e4beb8940c3265e2e5d54e0396d38297aa"
+    },
+    {
+      "path": "docs/16_PROMPT_VSCODE_AGENT_SIAP_TEMPEL.md",
+      "bytes": 3444,
+      "sha256": "4ad1440c96e0b9c9846baab2e2045373918a1fff9484adee9d916444c8c783d3"
+    },
+    {
+      "path": "docs/17_ROADMAP_KONTROL_PERUBAHAN_SOURCES.md",
+      "bytes": 2544,
+      "sha256": "dfbcf0c036b4a2ad789ef0871248bac8abe15ac5937ca6e7fbcd7cd18d3e01b8"
+    },
+    {
+      "path": "examples/audio-guide-catalog.mjs",
+      "bytes": 1303,
+      "sha256": "30aa79948b43c95fd1612beeeeac823f06c763b25eb8cb90095e08184f82cfb5"
+    },
+    {
+      "path": "examples/voice-dictation.mjs",
+      "bytes": 2809,
+      "sha256": "4a69b71bffd0a0cbbf0d8134be2f96e96441d4e10b048e66a09ab1bc06fb0421"
+    },
+    {
+      "path": "examples/voice-guide.mjs",
+      "bytes": 3084,
+      "sha256": "e892d641a89fcea32dffc281b413d9d1a97e42d72ecbcd8110dbfdde3ebcf8eb"
+    },
+    {
+      "path": "qa/voice-tests.mjs",
+      "bytes": 2481,
+      "sha256": "a533ab17116ce0919f38bf7f2ec098f371ca0617a5c360aab632dd0abe16567a"
+    }
+  ]
+}
