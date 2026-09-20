@@ -9,7 +9,8 @@
   --v2-focus-offset: 3px;
 }
 
-body { font-size: var(--v2-body-size); line-height: var(--v2-body-line); }
+body { font-size: var(--v2-body-size); line-height: var(--v2-body-line); overflow-x: hidden; }
+@supports (overflow: clip) { body { overflow-x: clip; } }
 
 html, body, #app { max-width: 100%; }
 .hero-grid > *, .grid-two > *, .feature-grid > *, .case-layout > *,
