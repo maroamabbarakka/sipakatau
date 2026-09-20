@@ -8,6 +8,17 @@
   margin-inline: 24px;
 }
 
+.public-main,
+.hero-grid,
+.hero-grid > div {
+  min-width: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
 @media (max-width: 760px) {
   .page-wrap > .page-head {
     padding-inline: 18px;
@@ -15,5 +26,51 @@
 
   .page-wrap > .notice {
     margin-inline: 18px;
+  }
+
+  .hero-grid > div {
+    min-width: 0;
+  }
+
+  .hero-grid {
+    display: block;
+    width: 100%;
+  }
+
+  .hero-grid > div:first-child {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero h1,
+  .hero p {
+    overflow-wrap: anywhere;
+  }
+
+  .hero h1 {
+    width: 100%;
+    max-width: 320px;
+    font-size: 34px;
+    letter-spacing: -0.04em;
+    word-break: normal;
+  }
+
+  .hero p {
+    max-width: 340px;
+  }
+
+  .hero-visual {
+    width: 100%;
+  }
+
+  .site-header nav {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .site-header nav a {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    font-size: 10px;
   }
 }
