@@ -122,7 +122,7 @@ function applyV21Visuals(){
  const path=route();
  const visualMap=path==='/'?['assets/illustrations/01_konsultasi_pendidikan.webp','Ilustrasi konsultasi pendidikan']:path==='/pengaduan'?['assets/illustrations/02_form_dengan_voice.webp','Ilustrasi formulir dengan bantuan suara']:path==='/bantuan-anak'?['assets/illustrations/03_sekolah_inklusif.webp','Ilustrasi sekolah inklusif']:['assets/illustrations/04_routing_pengaduan.webp','Ilustrasi alur routing pengaduan'];
  const target=document.querySelector('.hero-visual,.panel');
- if(target&&!target.querySelector('.v21-illustration')){const img=document.createElement('img');img.className='v21-illustration';img.src=visualMap[0];img.alt=visualMap[1];target.prepend(img)}
+ if(target&&!target.querySelector('.v21-illustration')){const img=document.createElement('img');img.className='v21-illustration';img.src=visualMap[0];img.alt=visualMap[1];target.prepend(img);if(window.SIPAudioGuide&&path!=='/dashboard'){const b=document.createElement('button');b.type='button';b.className='btn audio-guide-button';b.textContent='🔊 Dengarkan panduan';b.addEventListener('click',()=>{const key=path==='/'?'publicIntro':path==='/pengaduan'?'formStep':path==='/lacak'?'tracking':'privacy';const result=window.SIPAudioGuide.speak(key);if(result==='NO_INDONESIAN_VOICE'||result==='UNSUPPORTED')b.textContent='📖 Baca panduan teks';else b.textContent=result==='SPEAKING'?'⏹ Hentikan panduan':'🔊 Dengarkan panduan'});target.append(b)}}
 }
 const baseRender=render; render=()=>{baseRender();applyV21Visuals()};
 render();
