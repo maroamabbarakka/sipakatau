@@ -31,8 +31,8 @@ html, body, #app { max-width: 100%; }
 .timeline-item { min-height: 48px; }
 .tracking-form, #tracking-form { height: 100%; }
 .tracking-form .notice, #tracking-form .notice { font-size: 14px; }
-.wizard-progress { gap: 6px; }
-.wizard-step { min-height: 52px; display: flex; align-items: center; }
+.wizard-progress { gap: 6px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.wizard-step { min-width: 0; min-height: 52px; display: flex; align-items: center; overflow-wrap: anywhere; }
 .form-nav { align-items: center; }
 .form-nav .btn { min-width: 140px; }
 .notice { font-size: 14px; }
@@ -64,7 +64,9 @@ textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
 }
 
 @media (max-width: 600px) {
-  .site-header nav a { font-size: 14px; }
+  .site-header nav { width: 100%; gap: 6px; }
+  .site-header nav a { flex: 1 1 0; min-width: 0; font-size: 12px; line-height: 1.25; overflow-wrap: anywhere; text-align: center; }
+  .site-header nav .btn { flex: 1 1 0; min-width: 0; font-size: 13px; }
   .demo-band, .eyebrow, .pill { font-size: 12px; }
   .btn.tiny { min-height: 44px; }
   .actions > .btn, .form-nav > .btn { flex: 1 1 100%; min-width: 0; }
