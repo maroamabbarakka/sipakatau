@@ -41,6 +41,6 @@ textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
   .wizard-step { overflow-wrap: anywhere; }
   .site-header { align-items: flex-start; }
   .site-header nav { width: 100%; gap: 6px; justify-content: space-between; }
-  .site-header nav a { min-width: 0; font-size: 12px; overflow-wrap: anywhere; }
-  .site-header nav .btn { flex: 1 1 100%; min-width: 0; font-size: 13px; }
+  .site-header nav a { flex: 1 1 0; min-width: 0; font-size: 12px; line-height: 1.25; overflow-wrap: anywhere; text-align: center; }
+  .site-header nav .btn { flex: 1 1 0; min-width: 0; font-size: 13px; }
 }
