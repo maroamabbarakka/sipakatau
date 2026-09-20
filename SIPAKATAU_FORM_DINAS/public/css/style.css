@@ -8,6 +8,7 @@
   .site-header{display:block}
   .brand{min-width:0;max-width:100%}
   .brand span{min-width:0;overflow-wrap:anywhere}
-  .intro h1,.intro p,.notice,.section-header h2,.section-header p{max-width:100%;overflow-wrap:anywhere}
+  .intro{overflow:hidden}
+  .intro h1,.intro p,.notice,.section-header h2,.section-header p{display:block;max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere;word-break:break-word}
   .step-nav{max-width:100%}
 }
