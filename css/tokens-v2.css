@@ -11,6 +11,11 @@
 
 body { font-size: var(--v2-body-size); line-height: var(--v2-body-line); }
 
+html, body, #app { max-width: 100%; }
+.hero-grid > *, .grid-two > *, .feature-grid > *, .case-layout > *,
+.login-wrap > *, .requirement-layout > * { min-width: 0; }
+.hero p, .section-desc, .page-head p { overflow-wrap: anywhere; }
+
 button, input, textarea, select { min-height: var(--v2-control-min); }
 
 .btn { min-height: var(--v2-control-min); font-size: 16px; }
