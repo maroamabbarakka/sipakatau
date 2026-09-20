@@ -1,0 +1,33 @@
+/* SIPAKATAU UI/UX V2 — G1 tokens. No data, route, or permission semantics. */
+:root {
+  --v2-body-size: 16px;
+  --v2-body-line: 1.6;
+  --v2-label-size: 16px;
+  --v2-helper-size: 14px;
+  --v2-control-min: 48px;
+  --v2-focus-ring: 3px solid #fba624;
+  --v2-focus-offset: 3px;
+}
+
+body { font-size: var(--v2-body-size); line-height: var(--v2-body-line); }
+
+button, input, textarea, select { min-height: var(--v2-control-min); }
+
+.btn { min-height: var(--v2-control-min); font-size: 16px; }
+.btn.tiny { min-height: 40px; font-size: 14px; }
+
+.field > label, .field > span,
+.requirement-page .field > label, .requirement-page legend { font-size: var(--v2-label-size); }
+.field small, .field .muted, .requirement-page .field small { font-size: var(--v2-helper-size); }
+
+button:focus-visible, a:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
+  outline: var(--v2-focus-ring);
+  outline-offset: var(--v2-focus-offset);
+}
+
+@media (max-width: 600px) {
+  .site-header nav a { font-size: 14px; }
+  .demo-band, .eyebrow, .pill { font-size: 12px; }
+  .btn.tiny { min-height: 44px; }
+}
