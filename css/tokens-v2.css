@@ -42,6 +42,11 @@ html, body, #app { max-width: 100%; }
 .data-table th { font-size: 12px; }
 .topbar { min-height: 76px; }
 .role-chip { min-height: 44px; display: inline-flex; align-items: center; }
+.workspace .step-nav button { min-height: 48px; font-size: 14px; }
+.workspace .progress-top strong { font-size: 20px; }
+.workspace .category-card { min-width: 0; }
+.workspace .export-actions { gap: 12px; }
+.workspace .export-actions .btn { min-height: 48px; }
 
 button, input, textarea, select { min-height: var(--v2-control-min); }
 
@@ -75,6 +80,10 @@ textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
   .staff-main .metric strong { font-size: 25px; }
   .data-table { min-width: 680px; }
   .topbar { align-items: center; }
+  .workspace .step-nav { overflow-x: auto; overscroll-behavior-x: contain; }
+  .workspace .step-nav button { flex: 0 0 auto; white-space: nowrap; }
+  .workspace .export-actions { display: grid; grid-template-columns: 1fr; }
+  .workspace .export-actions .btn { width: 100%; }
 }
 
 @media (max-width: 360px) {
