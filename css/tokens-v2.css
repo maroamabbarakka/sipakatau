@@ -25,6 +25,12 @@ html, body, #app { max-width: 100%; }
 .catalogue .cat-tile:focus-visible { outline: var(--v2-focus-ring); outline-offset: var(--v2-focus-offset); }
 #tracking-form .btn { min-height: 52px; }
 .result-box { border-width: 2px; }
+.page-head { max-width: 820px; }
+.page-head .eyebrow { display: inline-block; margin-bottom: 6px; }
+.faq-item summary { min-height: 52px; display: flex; align-items: center; }
+.timeline-item { min-height: 48px; }
+.tracking-form, #tracking-form { height: 100%; }
+.tracking-form .notice, #tracking-form .notice { font-size: 14px; }
 
 button, input, textarea, select { min-height: var(--v2-control-min); }
 
@@ -49,6 +55,8 @@ textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
   .actions { align-items: stretch; }
   .table-wrap { max-width: 100%; overscroll-behavior-x: contain; }
   .hero .actions .btn, #tracking-form .btn { min-height: 52px; }
+  .page-head { margin-bottom: 20px; }
+  .page-head h1 { overflow-wrap: anywhere; }
 }
 
 @media (max-width: 360px) {
