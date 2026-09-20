@@ -31,6 +31,12 @@ html, body, #app { max-width: 100%; }
 .timeline-item { min-height: 48px; }
 .tracking-form, #tracking-form { height: 100%; }
 .tracking-form .notice, #tracking-form .notice { font-size: 14px; }
+.wizard-progress { gap: 6px; }
+.wizard-step { min-height: 52px; display: flex; align-items: center; }
+.form-nav { align-items: center; }
+.form-nav .btn { min-width: 140px; }
+.notice { font-size: 14px; }
+.result-box p { font-size: 16px; }
 
 button, input, textarea, select { min-height: var(--v2-control-min); }
 
@@ -57,6 +63,9 @@ textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
   .hero .actions .btn, #tracking-form .btn { min-height: 52px; }
   .page-head { margin-bottom: 20px; }
   .page-head h1 { overflow-wrap: anywhere; }
+  .wizard-progress { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .wizard-step { min-height: 58px; font-size: 12px; }
+  .form-nav .btn { min-width: 0; }
 }
 
 @media (max-width: 360px) {
