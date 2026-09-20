@@ -17,6 +17,15 @@ html, body, #app { max-width: 100%; }
 .login-wrap > *, .requirement-layout > * { min-width: 0; }
 .hero p, .section-desc, .page-head p { overflow-wrap: anywhere; }
 
+/* G2 public surface: strengthen primary actions and catalogue scanability. */
+.hero .actions .btn.primary,
+.hero .actions .btn:not(.ghost) { min-height: 52px; font-weight: 800; }
+.hero .actions .btn.primary { box-shadow: 0 10px 22px rgba(8, 96, 201, .22); }
+.catalogue .cat-tile { min-height: 74px; align-items: center; }
+.catalogue .cat-tile:focus-visible { outline: var(--v2-focus-ring); outline-offset: var(--v2-focus-offset); }
+#tracking-form .btn { min-height: 52px; }
+.result-box { border-width: 2px; }
+
 button, input, textarea, select { min-height: var(--v2-control-min); }
 
 .btn { min-height: var(--v2-control-min); font-size: 16px; }
@@ -39,6 +48,7 @@ textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
   .actions > .btn, .form-nav > .btn { flex: 1 1 100%; min-width: 0; }
   .actions { align-items: stretch; }
   .table-wrap { max-width: 100%; overscroll-behavior-x: contain; }
+  .hero .actions .btn, #tracking-form .btn { min-height: 52px; }
 }
 
 @media (max-width: 360px) {
