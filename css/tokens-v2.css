@@ -37,6 +37,11 @@ html, body, #app { max-width: 100%; }
 .form-nav .btn { min-width: 140px; }
 .notice { font-size: 14px; }
 .result-box p { font-size: 16px; }
+.staff-main .metric { min-height: 132px; }
+.data-table th, .data-table td { font-size: 14px; }
+.data-table th { font-size: 12px; }
+.topbar { min-height: 76px; }
+.role-chip { min-height: 44px; display: inline-flex; align-items: center; }
 
 button, input, textarea, select { min-height: var(--v2-control-min); }
 
@@ -66,6 +71,10 @@ textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
   .wizard-progress { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .wizard-step { min-height: 58px; font-size: 12px; }
   .form-nav .btn { min-width: 0; }
+  .staff-main .metric { min-height: 112px; }
+  .staff-main .metric strong { font-size: 25px; }
+  .data-table { min-width: 680px; }
+  .topbar { align-items: center; }
 }
 
 @media (max-width: 360px) {
