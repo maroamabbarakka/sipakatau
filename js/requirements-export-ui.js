@@ -1,0 +1,4 @@
+(function(){
+  function add(){let page=document.querySelector('.requirement-page');if(!page||page.querySelector('[data-export-bottom]'))return;let review=page.querySelector('.review-section');if(!review)return;let box=document.createElement('div');box.className='requirement-export-bottom';box.dataset.exportBottom='true';box.innerHTML='<div><strong>Simpan hasil formulir</strong><span>Gunakan Excel untuk pengolahan data atau PDF untuk dicetak/diarsipkan.</span></div><div class="requirement-export-actions"><button class="btn" type="button" data-req-export="xlsx">Unduh Excel (.xlsx)</button><button class="btn" type="button" data-req-export="pdf">Cetak / Simpan PDF</button></div>';review.parentElement.insertBefore(box,review)}
+  window.addEventListener('hashchange',()=>setTimeout(add,50));setTimeout(add,50);
+})();

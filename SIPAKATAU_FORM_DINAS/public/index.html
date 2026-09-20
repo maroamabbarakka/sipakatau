@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#114caa">
+  <meta name="description" content="Form singkat pengumpulan kebutuhan SIPAKATAU bagi pegawai Dinas Pendidikan Kabupaten Pinrang.">
+  <title>Form Kebutuhan Dinas · SIPAKATAU</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="firebase-config.js"></script>
+  <script defer src="js/app.js"></script>
+  <script type="module" src="js/cloud.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Lewati ke isi formulir</a>
+<div class="layout">
+ <header class="site-header">
+   <div class="brand"><img src="assets/logo.png" alt="SIPAKATAU" width="185"><span>Form kebutuhan dinas</span></div>
+   <span class="header-badge">Dinas Pendidikan Kabupaten Pinrang</span>
+ </header>
+ <main id="main" class="shell">
+   <section class="intro" aria-labelledby="title">
+     <div class="eyebrow">PERSIAPAN LAYANAN</div>
+     <h1 id="title">Bantu kami melengkapi SIPAKATAU</h1>
+     <p>Isi informasi dasar yang sudah diketahui. Belum tahu jawabannya? Lewati dahulu, lalu lengkapi bersama rekan kerja.</p>
+     <div class="notice"><span aria-hidden="true">ⓘ</span><span>Form ini khusus kebutuhan layanan dan nama petugas. <strong>Jangan tulis NIK, data murid, isi pengaduan nyata, atau kata sandi.</strong></span></div>
+   </section>
+   <section class="workspace" aria-label="Form kebutuhan">
+     <div class="progress-top"><div><span id="step-label">Bagian 1 dari 5</span><strong id="step-name">Identitas layanan</strong></div><span id="progress-percent">20%</span></div>
+     <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1" aria-label="Kemajuan bagian"><div id="progress-fill"></div></div>
+     <nav class="step-nav" aria-label="Bagian formulir"><button type="button" data-step="0" class="active">1. Layanan</button><button type="button" data-step="1">2. WhatsApp</button><button type="button" data-step="2">3. Kategori</button><button type="button" data-step="3">4. Pelayanan</button><button type="button" data-step="4">5. Periksa</button></nav>
+     <form id="needs-form" novalidate>
+       <section class="step" data-panel="0" aria-labelledby="s0-title">
+          <div class="section-header"><span class="section-icon">01</span><div><h2 id="s0-title">Tentang layanan ini</h2><p>Konfirmasi nama dan siapa yang bertanggung jawab.</p></div></div>
+          <div class="fields">
+           <label class="field"><span>Nama instansi <em>• wajib</em></span><input name="agency" autocomplete="organization" required value="Dinas Pendidikan Kabupaten Pinrang" placeholder="Nama instansi" maxlength="130"></label>
+           <label class="field"><span>Nama layanan yang ingin digunakan <em>• wajib</em></span><input name="service_name" value="SIPAKATAU" required maxlength="100" placeholder="Contoh: SIPAKATAU"><small>Boleh ditulis SIPAKATAU jika tidak ada perubahan.</small></label>
+           <label class="field"><span>Ada usulan perubahan nama atau kepanjangan?</span><textarea name="service_rename" rows="2" maxlength="500" placeholder="Tidak ada, atau tulis nama dan alasannya"></textarea></label>
+           <label class="field"><span>Nama penanggung jawab layanan <em>• wajib</em></span><input name="owner_name" required autocomplete="name" maxlength="100" placeholder="Nama lengkap penanggung jawab"></label>
+           <label class="field"><span>Jabatan penanggung jawab</span><input name="owner_position" maxlength="100" placeholder="Contoh: Kepala Bidang ..."></label>
+           <label class="field"><span>Hal yang ingin dicapai dengan layanan ini</span><textarea name="main_goal" rows="3" maxlength="1200" placeholder="Contoh: masyarakat mudah melapor dan semua laporan tercatat"></textarea></label>
+          </div>
+       </section>
+       <section class="step" data-panel="1" hidden aria-labelledby="s1-title">
+          <div class="section-header"><span class="section-icon">02</span><div><h2 id="s1-title">Nomor WhatsApp dan pengelola</h2><p>Isi kontak resmi yang akan dipakai menerima pengaduan.</p></div></div>
+          <div class="fields">
+           <label class="field"><span>Nomor WhatsApp pengaduan resmi <em>• wajib</em></span><input name="official_wa" required type="tel" inputmode="tel" autocomplete="tel" placeholder="Contoh: 0812xxxxxxxx" maxlength="22"><small>Nomor kantor, bukan nomor pribadi yang tidak mendapat penugasan.</small></label>
+           <label class="field"><span>Status nomor tersebut</span><select name="official_wa_status"><option value="">Pilih status</option><option>Sudah aktif dan digunakan</option><option>Sudah ada, belum aktif</option><option>Belum tersedia / perlu nomor baru</option><option>Perlu diputuskan pimpinan</option></select></label>
+           <label class="field"><span>Nama admin / pengelola WhatsApp <em>• wajib</em></span><input name="wa_admin_name" required maxlength="100" placeholder="Nama lengkap"></label>
+           <label class="field"><span>Email admin WhatsApp <em>• wajib</em></span><input name="wa_admin_email" required type="email" inputmode="email" autocomplete="email" maxlength="130" placeholder="nama@instansi.go.id"></label>
+           <label class="field"><span>Nomor WA admin WhatsApp <em>• wajib</em></span><input name="wa_admin_phone" required type="tel" inputmode="tel" maxlength="22" placeholder="08xxxxxxxxxx"></label>
+           <label class="field"><span>Admin pengganti, jika ada</span><input name="wa_backup_name" maxlength="100" placeholder="Nama lengkap (boleh dikosongkan)"></label>
+           <label class="field"><span>Jam layanan yang direncanakan</span><input name="service_hours" maxlength="150" placeholder="Contoh: Senin–Jumat, pukul 08.00–16.00"></label>
+          </div>
+       </section>
+       <section class="step" data-panel="2" hidden aria-labelledby="s2-title">
+          <div class="section-header"><span class="section-icon">03</span><div><h2 id="s2-title">Tinjau kategori pengaduan</h2><p>Periksa 17 layanan awal satu per satu. Anda bisa mengganti nama, menandai tidak diperlukan, dan menambahkan layanan baru.</p></div></div>
+          <div class="category-tools"><label class="field"><span>Pilih layanan yang ingin diisi</span><select id="category-select" aria-label="Pilih kategori pengaduan"></select></label><div class="counter" id="category-counter">1 dari 17</div></div>
+          <article class="category-card" id="category-card" aria-live="polite"></article>
+          <div class="category-actions"><button type="button" class="btn btn-soft" id="cat-prev">← Sebelumnya</button><button type="button" class="btn btn-soft" id="cat-next">Berikutnya →</button></div>
+          <div class="add-category"><h3>Perlu menambah layanan baru?</h3><p>Tambahkan layanan jika 17 kategori awal belum mencakup kebutuhan dinas.</p><button type="button" class="btn btn-outline" id="add-category">+ Tambah layanan</button><p id="category-add-info" class="muted"></p></div>
+       </section>
+       <section class="step" data-panel="3" hidden aria-labelledby="s3-title">
+          <div class="section-header"><span class="section-icon">04</span><div><h2 id="s3-title">Cara pelayanan yang diinginkan</h2><p>Beberapa keputusan dasar agar laporan tidak berhenti setelah diterima.</p></div></div>
+          <div class="fields">
+            <fieldset class="choice-group"><legend>Bagaimana laporan sebaiknya ditindaklanjuti?</legend><label><input type="checkbox" name="followup" value="Nomor tiket otomatis" checked><span>Warga menerima nomor tiket</span></label><label><input type="checkbox" name="followup" value="Diteruskan ke admin kategori" checked><span>Masuk ke admin sesuai jenis pengaduan</span></label><label><input type="checkbox" name="followup" value="Dapat dipantau pimpinan" checked><span>Progres dapat dipantau pimpinan</span></label><label><input type="checkbox" name="followup" value="Warga dapat memantau status" checked><span>Warga dapat mengecek status laporan</span></label></fieldset>
+            <label class="field"><span>Target balasan awal kepada pelapor</span><select name="response_target"><option value="">Belum diputuskan</option><option>Dalam 1 jam kerja</option><option>Dalam 1 hari kerja</option><option>Dalam 2 hari kerja</option><option>Berbeda menurut jenis masalah</option></select><small>Ini usulan awal, bukan standar layanan resmi sebelum ditetapkan.</small></label>
+            <label class="field"><span>Siapa yang memantau semua pengaduan?</span><input name="central_monitor_name" maxlength="100" placeholder="Nama operator pusat / koordinator"></label>
+            <label class="field"><span>Email operator pusat</span><input name="central_monitor_email" type="email" inputmode="email" maxlength="130" placeholder="nama@instansi.go.id"></label>
+            <label class="field"><span>Nomor WA operator pusat</span><input name="central_monitor_wa" type="tel" inputmode="tel" maxlength="22" placeholder="08xxxxxxxxxx"></label>
+            <fieldset class="choice-group"><legend>Kebutuhan pelayanan khusus</legend><label><input type="checkbox" name="special_needs" value="Identitas pelapor dapat dilindungi" checked><span>Identitas pelapor dapat dirahasiakan dari petugas yang tidak berwenang</span></label><label><input type="checkbox" name="special_needs" value="Laporan tanpa nama melalui form" checked><span>Laporan tanpa nama melalui formulir</span></label><label><input type="checkbox" name="special_needs" value="Aksesibilitas disabilitas" checked><span>Form mudah digunakan penyandang disabilitas</span></label><label><input type="checkbox" name="special_needs" value="Laporan keselamatan anak ditangani khusus" checked><span>Laporan keselamatan anak diprioritaskan oleh petugas khusus</span></label></fieldset>
+            <label class="field"><span>Layanan, aturan, atau kebutuhan lain yang belum tercantum</span><textarea name="other_requests" rows="4" maxlength="3000" placeholder="Tulis usulan dengan bahasa sederhana."></textarea></label>
+            <label class="field"><span>Hal yang masih perlu diputuskan pimpinan</span><textarea name="pending_decisions" rows="3" maxlength="2000" placeholder="Contoh: nama admin kategori 02 belum ditetapkan."></textarea></label>
+          </div>
+       </section>
+       <section class="step" data-panel="4" hidden aria-labelledby="s4-title">
+          <div class="section-header"><span class="section-icon">05</span><div><h2 id="s4-title">Periksa jawaban dan simpan</h2><p>Pastikan nomor resmi, admin, dan perubahan layanan sudah benar.</p></div></div>
+          <div class="review" id="review"></div>
+          <div class="export-actions"><button type="button" class="btn btn-primary" id="download-json">↓ Unduh hasil isian</button><button type="button" class="btn btn-outline" id="download-csv">↓ Unduh daftar operator (CSV)</button><button type="button" class="btn btn-outline" id="print-form">Cetak ringkasan</button></div>
+          <div id="cloud-actions" hidden><button type="button" class="btn btn-primary" id="cloud-save">Simpan ke Firebase</button><span id="cloud-state" role="status"></span></div>
+          <p class="export-note">Jika belum menggunakan penyimpanan daring, tekan <strong>Unduh hasil isian</strong> agar jawaban tidak hilang ketika halaman ditutup. Berkas berisi kontak pegawai: simpan dan kirim hanya melalui kanal internal yang disetujui.</p>
+       </section>
+       <div class="form-bottom"><button type="button" class="btn btn-outline" id="back">← Kembali</button><span id="autosave-note">Pengisian belum disimpan ke server</span><button type="button" class="btn btn-primary" id="next">Lanjut →</button></div>
+     </form>
+   </section>
+   <div class="bottom-help"><strong>Butuh bantuan mengisi?</strong><span>Cukup isikan yang diketahui dahulu. Kolom kosong dapat dilengkapi setelah nama petugas ditetapkan.</span></div>
+   <footer>Form kebutuhan internal SIPAKATAU • Bukan formulir pengaduan masyarakat • Belum merupakan penetapan resmi</footer>
+ </main>
+</div>
+<div id="toast" role="status" aria-live="polite" class="toast" hidden></div>
+<div id="login-gate" class="login-gate" hidden><form id="login-form" class="login-panel"><img src="assets/logo.png" alt="SIPAKATAU" width="190"><h2>Masuk untuk mengisi</h2><p>Gunakan akun petugas yang telah didaftarkan pengelola.</p><label class="field"><span>Email petugas</span><input id="login-email" type="email" required autocomplete="username"></label><label class="field"><span>Kata sandi</span><input id="login-password" type="password" required autocomplete="current-password"></label><p id="login-error" class="error" role="alert"></p><button class="btn btn-primary" type="submit">Masuk</button></form></div>
+</body>
+</html>

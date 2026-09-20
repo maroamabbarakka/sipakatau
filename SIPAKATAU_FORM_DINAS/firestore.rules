@@ -1,0 +1,37 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+   function isEditor() {
+     return request.auth != null
+       && exists(/databases/$(database)/documents/staff_access/$(request.auth.uid))
+       && get(/databases/$(database)/documents/staff_access/$(request.auth.uid)).data.active == true
+       && get(/databases/$(database)/documents/staff_access/$(request.auth.uid)).data.role in ['admin','editor'];
+   }
+   function validData() {
+     return request.resource.data.keys().hasAll(['schema_version','payload','revision','updated_at','updated_by'])
+       && request.resource.data.keys().hasOnly(['schema_version','payload','revision','updated_at','updated_by'])
+       && request.resource.data.schema_version == '2.0'
+       && request.resource.data.payload is map
+       && request.resource.data.payload.schema_version == '2.0'
+       && request.resource.data.payload.document_type == 'sipakatau_operational_requirements'
+       && request.resource.data.payload.fields is map
+       && request.resource.data.payload.categories is list
+       && request.resource.data.payload.categories.size() >= 17
+       && request.resource.data.payload.categories.size() <= 30
+       && request.resource.data.revision is int
+       && request.resource.data.updated_by == request.auth.uid
+       && request.resource.data.updated_at == request.time;
+   }
+   match /staff_access/{uid} {
+     allow get: if request.auth != null && uid == request.auth.uid;
+     allow list, create, update, delete: if false;
+   }
+   match /discovery_forms/main {
+     allow get: if isEditor();
+     allow list, delete: if false;
+     allow create: if isEditor() && validData() && request.resource.data.revision == 1;
+     allow update: if isEditor() && validData() && request.resource.data.revision == resource.data.revision + 1;
+   }
+   match /{document=**} {allow read,write: if false;}
+ }
+}

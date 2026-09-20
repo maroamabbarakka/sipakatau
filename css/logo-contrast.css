@@ -1,0 +1,49 @@
+/* Preserve the supplied full-colour mark on dark surfaces.
+   The previous invert filter flattened the logo into a solid silhouette. */
+.footer img,
+.sidebar-brand img,
+.login-art img {
+  filter: none;
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.phone-top img {
+  filter: none;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.footer-logos {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 86px;
+  margin-bottom: 16px;
+}
+
+.footer-logos img {
+  width: auto;
+  height: 72px;
+  max-width: 110px;
+  object-fit: contain;
+  padding: 0;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.footer-logos img + img {
+  max-width: 86px;
+}
+
+@media (max-width: 760px) {
+  .footer-logos {
+    gap: 12px;
+  }
+
+  .footer-logos img {
+    height: 64px;
+  }
+}
