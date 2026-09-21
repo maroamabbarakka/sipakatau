@@ -120,9 +120,38 @@ window.addEventListener('hashchange',()=>{ephemeral.menuOpen=false;ephemeral.pag
 window.SIPAKATAU_TEST={reset(){state=defaults();persist();render()},getState:()=>state,calculate:costCalc,categories:()=>state.categories,canBrowse,transition};
 function applyV21Visuals(){
  const path=route();
+ if(path==='/pengaduan'){
+  const wizardPanel=document.querySelector('.wizard-progress')?.closest('.panel');
+  const pageHead=document.querySelector('.page-head');
+  if(wizardPanel&&!wizardPanel.dataset.reportEnhanced){
+   wizardPanel.dataset.reportEnhanced='true';
+   wizardPanel.classList.add('report-wizard-panel');
+   pageHead?.classList.add('report-page-head');
+   const intro=document.createElement('aside');
+   intro.className='report-side-guide';
+   intro.innerHTML='<div class="report-side-art"><img src="assets/illustrations/02_form_dengan_voice.webp" alt="Ilustrasi pengisian pengaduan dengan bantuan suara"></div><span class="eyebrow">Pendamping pelaporan</span><h2>Ceritakan dengan tenang.</h2><p>Ikuti lima menit langkah sederhana. Anda dapat kembali, membaca panduan, atau menggunakan suara bila perangkat mendukung.</p><div class="report-side-actions"><a class="btn full" href="#/">Kembali ke beranda</a><a class="btn full" href="#/panduan">Buka pusat bantuan</a><button type="button" class="btn full audio-guide-button" data-report-audio="formStep">Dengarkan panduan</button><button type="button" class="btn full" data-report-audio-stop>Hentikan audio</button></div><p class="report-audio-status" role="status">Audio hanya membacakan panduan, bukan isi laporan.</p>';
+   wizardPanel.parentElement?.insertBefore(intro,wizardPanel);
+   const guideButton=intro.querySelector('[data-report-audio]');
+   guideButton?.addEventListener('click',()=>{const result=window.SIPAudioGuide?.speak('formStep');if(result==='NO_INDONESIAN_VOICE'||result==='UNSUPPORTED')guideButton.textContent='Baca panduan teks';else guideButton.textContent=result==='SPEAKING'?'Sedang diputar...':'Dengarkan panduan';});
+   intro.querySelector('[data-report-audio-stop]')?.addEventListener('click',()=>window.SIPAudioGuide?.stop());
+  }
+  const description=document.querySelector('#f-description');
+  if(description&&!description.dataset.voiceEnhanced){
+   description.dataset.voiceEnhanced='true';
+   const tools=document.createElement('div');tools.className='report-voice-tools';
+   tools.innerHTML='<label class="report-consent"><input type="checkbox" data-report-voice-consent> Saya setuju memakai mikrofon untuk demo ini</label><div class="report-voice-actions"><button type="button" class="btn" data-report-dictate>Gunakan mikrofon</button><button type="button" class="btn" data-report-dictate-stop>Hentikan</button><button type="button" class="btn" data-report-dictate-use>Gunakan transkrip</button></div><small class="report-dictation-status" role="status">Teks hasil suara selalu dapat diperiksa sebelum dikirim.</small>';
+   description.parentElement.append(tools);
+   tools.querySelector('[data-report-voice-consent]')?.addEventListener('change',e=>window.SIPDictation?.setConsent(e.target.checked));
+   tools.querySelector('[data-report-dictate]')?.addEventListener('click',()=>window.SIPDictation?.start());
+   tools.querySelector('[data-report-dictate-stop]')?.addEventListener('click',()=>window.SIPDictation?.stop());
+   tools.querySelector('[data-report-dictate-use]')?.addEventListener('click',()=>{const text=window.SIPDictation?.useTranscript?.();if(text)description.value=[description.value,text].filter(Boolean).join(' ').slice(0,2500);description.dispatchEvent(new Event('input',{bubbles:true}));});
+   const update=event=>{const d=event.detail||{};const status=tools.querySelector('.report-dictation-status');if(status)status.textContent=d.final||d.interim||String(d);};
+   window.addEventListener('sip-dictation-preview',update,{once:false});window.addEventListener('sip-dictation-state',e=>{const status=tools.querySelector('.report-dictation-status');if(status)status.textContent='Status mikrofon: '+e.detail;});
+  }
+ }
  const visualMap=path==='/'?['assets/illustrations/01_konsultasi_pendidikan.webp','Ilustrasi konsultasi pendidikan']:path==='/pengaduan'?['assets/illustrations/02_form_dengan_voice.webp','Ilustrasi formulir dengan bantuan suara']:path==='/bantuan-anak'?['assets/illustrations/03_sekolah_inklusif.webp','Ilustrasi sekolah inklusif']:['assets/illustrations/04_routing_pengaduan.webp','Ilustrasi alur routing pengaduan'];
  const target=document.querySelector('.hero-visual,.panel');
- if(target&&!target.querySelector('.v21-illustration')){const img=document.createElement('img');img.className='v21-illustration';img.src=visualMap[0];img.alt=visualMap[1];target.prepend(img);if(window.SIPAudioGuide&&path!=='/dashboard'){const b=document.createElement('button');b.type='button';b.className='btn audio-guide-button';b.textContent='🔊 Dengarkan panduan';b.addEventListener('click',()=>{const key=path==='/'?'publicIntro':path==='/pengaduan'?'formStep':path==='/lacak'?'tracking':'privacy';const result=window.SIPAudioGuide.speak(key);if(result==='NO_INDONESIAN_VOICE'||result==='UNSUPPORTED')b.textContent='📖 Baca panduan teks';else b.textContent=result==='SPEAKING'?'⏹ Hentikan panduan':'🔊 Dengarkan panduan'});target.append(b)}}
+ if(target&&path!=='/pengaduan'&&!target.querySelector('.v21-illustration')){const img=document.createElement('img');img.className='v21-illustration';img.src=visualMap[0];img.alt=visualMap[1];target.prepend(img);if(window.SIPAudioGuide&&path!=='/dashboard'){const b=document.createElement('button');b.type='button';b.className='btn audio-guide-button';b.textContent='🔊 Dengarkan panduan';b.addEventListener('click',()=>{const key=path==='/'?'publicIntro':path==='/pengaduan'?'formStep':path==='/lacak'?'tracking':'privacy';const result=window.SIPAudioGuide.speak(key);if(result==='NO_INDONESIAN_VOICE'||result==='UNSUPPORTED')b.textContent='📖 Baca panduan teks';else b.textContent=result==='SPEAKING'?'⏹ Hentikan panduan':'🔊 Dengarkan panduan'});target.append(b)}}
 }
 const baseRender=render; render=()=>{baseRender();applyV21Visuals()};
 render();
