@@ -127,7 +127,7 @@ body {
 .public-main > .section:nth-of-type(2) .feature-grid .card::after { content: ''; position: absolute; width: 150px; height: 150px; border-radius: 50%; right: -65px; bottom: -72px; background: rgba(22,129,238,.08); pointer-events: none; }
 .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(2)::after { background: rgba(0,138,121,.09); }
 .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(3)::after { background: rgba(244,124,45,.1); }
-.public-main > .section:nth-of-type(2) .iconbox { width: 68px; height: 68px; border-radius: 20px; background-color: #e4f1ff; background-position: center; background-repeat: no-repeat; background-size: 48px; font-size: 0; box-shadow: 0 10px 22px rgba(17,92,184,.13); }
+.public-main > .section:nth-of-type(2) .iconbox { width: 88px; height: 88px; border-radius: 26px; background-color: #e4f1ff; background-position: center; background-repeat: no-repeat; background-size: 66px; font-size: 0; box-shadow: 0 14px 28px rgba(17,92,184,.16); }
 .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(1) .iconbox { background-image: url('../assets/update/icon-1.png'); }
 .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(2) .iconbox { background-color: #e2f7f2; background-image: url('../assets/update/icon-2.png'); }
 .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(3) .iconbox { background-color: #fff0df; background-image: url('../assets/update/icon-3.png'); }
@@ -150,12 +150,24 @@ body {
 .public-main > .section:nth-of-type(4) .catalogue { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
 .public-main > .section:nth-of-type(4) .cat-tile { min-height: 78px; align-items: center; }
 .public-main > .section:nth-of-type(4) .cat-tile { padding: 18px 20px; border-radius: 17px; background: linear-gradient(135deg,#fff,#f5faff); }
+.public-main > .section:nth-of-type(4) .cat-tile:nth-child(4n+1) { border-left: 5px solid #1681ee; }
+.public-main > .section:nth-of-type(4) .cat-tile:nth-child(4n+2) { border-left: 5px solid #008a79; background: linear-gradient(135deg,#fff,#f1fbf8); }
+.public-main > .section:nth-of-type(4) .cat-tile:nth-child(4n+3) { border-left: 5px solid #f47c2d; background: linear-gradient(135deg,#fff,#fff7ed); }
+.public-main > .section:nth-of-type(4) .cat-tile:nth-child(4n+4) { border-left: 5px solid #7357c8; background: linear-gradient(135deg,#fff,#f7f3ff); }
+.public-main > .section:nth-of-type(4) .cat-tile:hover { transform: translateY(-5px) scale(1.01); border-color: #115cb8; }
 .public-main > .section:nth-of-type(4) .cat-tile > span:nth-child(2) { font-size: 16px; line-height: 1.35; }
 .public-main > .section:nth-of-type(4) .cat-tile small { font-size: 13px; margin-top: 7px; }
 .public-main > .section:nth-of-type(4) .cat-num { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; font-size: 15px; }
 .public-main > .section:nth-of-type(4) .cat-tile::after { content: '→'; margin-left: auto; color: var(--blue); font-size: 18px; }
 .public-main > .section:nth-of-type(3) .step-row { grid-template-columns: repeat(4, minmax(0,1fr)); }
-.public-main > .section:nth-of-type(3) .step { min-height: 150px; }
+.public-main > .section:nth-of-type(3) .step { min-height: 205px; padding: 26px; position: relative; overflow: hidden; border: 1px solid #d5e5f3; background: linear-gradient(145deg,#fff,#f7fbff); }
+.public-main > .section:nth-of-type(3) .step:nth-child(2) { background: linear-gradient(145deg,#fff,#f0fbf8); }
+.public-main > .section:nth-of-type(3) .step:nth-child(3) { background: linear-gradient(145deg,#fff,#fff7ed); }
+.public-main > .section:nth-of-type(3) .step:nth-child(4) { background: linear-gradient(145deg,#fff,#f4f0ff); }
+.public-main > .section:nth-of-type(3) .step-n { width: 52px; height: 52px; font-size: 20px; margin-bottom: 24px; box-shadow: 0 8px 18px rgba(17,92,184,.2); }
+.public-main > .section:nth-of-type(3) .step strong { font-size: 18px; color: #102f49; }
+.public-main > .section:nth-of-type(3) .step p { font-size: 14px; line-height: 1.7; }
+.public-main > .section:nth-of-type(3) .step::after { content: '→'; position: absolute; right: 20px; top: 28px; color: #1681ee; font-size: 26px; font-weight: 800; opacity: .7; }
 .public-main > .section:nth-of-type(5) .grid-two { align-items: center; }
 .footer { margin-top: 0; }
 
