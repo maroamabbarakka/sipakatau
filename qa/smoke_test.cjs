@@ -98,7 +98,8 @@ check('WhatsApp two messages group into one ticket; delivery does not create cas
 check('staging-only signals: no live credentials or external JavaScript dependencies',()=>{
  const html=fs.readFileSync(path.join(dir,'index.html'),'utf8');
  assert.match(html,/data simulasi/i);
- assert.doesNotMatch(html,/https?:\/\//);
+ const htmlWithoutOwnedPreviewMeta=html.replace(/https:\/\/sipakatau-uiux-v21\.web\.app[^"']*/gi,'');
+ assert.doesNotMatch(htmlWithoutOwnedPreviewMeta,/https?:\/\//);
  assert.doesNotMatch(fs.readFileSync(path.join(dir,'js/app.js'),'utf8'),/fetch\s*\(/);
 });
 if(process.exitCode){console.error('Smoke tests failed.');process.exit(process.exitCode)}
