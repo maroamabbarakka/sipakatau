@@ -96,6 +96,28 @@ textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
   .workspace .export-actions .btn { width: 100%; }
 }
 
+/* SAPA-inspired guided reporting surface, adapted for education service. */
+.page-wrap:has(.wizard-progress) { background: linear-gradient(180deg,#f2f7fc 0,#fff 45%); }
+.page-wrap:has(.wizard-progress) .page-head { max-width: 900px; margin-inline: auto; text-align: center; }
+.page-wrap:has(.wizard-progress) .page-head h1 { font-size: clamp(32px,4vw,48px); }
+.page-wrap:has(.wizard-progress) > .panel { border: 0; box-shadow: 0 20px 55px rgba(16,47,73,.12); border-radius: 24px; }
+.page-wrap:has(.wizard-progress) .wizard-progress { background: #f1f6fb; border-radius: 16px; padding: 8px; }
+.page-wrap:has(.wizard-progress) .wizard-step { border: 0; border-radius: 10px; text-align: center; }
+.page-wrap:has(.wizard-progress) .wizard-step.active { background: #115cb8; color: #fff; }
+.page-wrap:has(.wizard-progress) .wizard-step.done { background: #dff5eb; color: #087858; }
+.page-wrap:has(.wizard-progress) .field input,
+.page-wrap:has(.wizard-progress) .field textarea,
+.page-wrap:has(.wizard-progress) .field select { min-height: 50px; border-radius: 12px; font-size: 16px; }
+.page-wrap:has(.wizard-progress) .field textarea { min-height: 150px; }
+.page-wrap:has(.wizard-progress) .form-nav { align-items: center; }
+.page-wrap:has(.wizard-progress) .form-nav .btn { min-width: 150px; }
+@media (max-width: 600px) {
+  .page-wrap:has(.wizard-progress) { padding-top: 24px; }
+  .page-wrap:has(.wizard-progress) .wizard-progress { grid-template-columns: repeat(4,1fr); }
+  .page-wrap:has(.wizard-progress) .wizard-step { font-size: 11px; min-height: 55px; display: grid; place-items: center; }
+  .page-wrap:has(.wizard-progress) .form-nav .btn { min-width: 0; flex: 1; }
+}
+
 @media (max-width: 360px) {
   .container { padding-left: 14px; padding-right: 14px; }
   .card, .panel { padding: 16px; }

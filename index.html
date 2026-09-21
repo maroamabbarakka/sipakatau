@@ -20,6 +20,13 @@
   <a class="skip-link" href="#main">Lewati ke konten utama</a>
   <div id="app"></div>
   <noscript>Demo interaktif SIPAKATAU membutuhkan JavaScript aktif. Dokumen pengembangan tersedia di folder docs.</noscript>
+  <script>
+    // Public URL alias: the SAPA-inspired reporting entry point is /lapor.
+    // The application keeps its hash routes for the existing demo flows.
+    if (location.pathname === '/lapor' || location.pathname === '/lapor/') {
+      location.replace('/#/pengaduan');
+    }
+  </script>
   <script src="js/data.js"></script>
   <script src="js/audio/audio-catalog.js"></script>
   <script src="js/audio/voice-guide.js"></script>
