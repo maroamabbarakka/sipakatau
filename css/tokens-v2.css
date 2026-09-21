@@ -96,6 +96,11 @@ textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
   .workspace .export-actions .btn { width: 100%; }
 }
 
+@media (max-width: 760px) {
+  .site-header nav { display: none !important; }
+  .site-header .menu-toggle { display: inline-flex !important; }
+}
+
 /* SAPA-inspired guided reporting surface, adapted for education service. */
 .page-wrap:has(.wizard-progress) { background: linear-gradient(180deg,#f2f7fc 0,#fff 45%); }
 .page-wrap:has(.wizard-progress) .page-head { max-width: 900px; margin-inline: auto; text-align: center; }
