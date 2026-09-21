@@ -96,7 +96,7 @@ body {
   transform: scale(1.02);
 }
 .public-main > .hero::before {
-  background-image: linear-gradient(90deg, rgba(8,31,51,.96) 0%, rgba(10,43,68,.78) 45%, rgba(10,43,68,.32) 100%), url('../assets/update/sipakatau-service-v22.png');
+  background-image: linear-gradient(90deg, rgba(8,31,51,.96) 0%, rgba(10,43,68,.78) 45%, rgba(10,43,68,.32) 100%), url('../assets/update/sipakatau-service-v22.webp');
   background-position: center, right bottom;
   background-size: cover, min(70%, 900px);
   background-repeat: no-repeat;
@@ -128,9 +128,9 @@ body {
 .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(2)::after { background: rgba(0,138,121,.09); }
 .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(3)::after { background: rgba(244,124,45,.1); }
 .public-main > .section:nth-of-type(2) .iconbox { width: 88px; height: 88px; border-radius: 26px; background-color: #e4f1ff; background-position: center; background-repeat: no-repeat; background-size: 66px; font-size: 0; box-shadow: 0 14px 28px rgba(17,92,184,.16); }
-.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(1) .iconbox { background-image: url('../assets/update/icon-1.png'); }
-.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(2) .iconbox { background-color: #e2f7f2; background-image: url('../assets/update/icon-2.png'); }
-.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(3) .iconbox { background-color: #fff0df; background-image: url('../assets/update/icon-3.png'); }
+.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(1) .iconbox { background-image: url('../assets/update/icon-1.webp'); }
+.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(2) .iconbox { background-color: #e2f7f2; background-image: url('../assets/update/icon-2.webp'); }
+.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(3) .iconbox { background-color: #fff0df; background-image: url('../assets/update/icon-3.webp'); }
 .public-main > .section:nth-of-type(2) .feature-grid h3 { font-size: 21px; margin-top: 22px; }
 .public-main > .section:nth-of-type(2) .feature-grid p { font-size: 15px; line-height: 1.75; }
 .public-main > .section:nth-of-type(2) .feature-grid a { display: inline-flex; margin-top: 10px; font-size: 15px; font-weight: 750; position: relative; z-index: 1; }
@@ -165,6 +165,10 @@ body {
 .public-main > .section:nth-of-type(3) .step:nth-child(3) { background: linear-gradient(145deg,#fff,#fff7ed); }
 .public-main > .section:nth-of-type(3) .step:nth-child(4) { background: linear-gradient(145deg,#fff,#f4f0ff); }
 .public-main > .section:nth-of-type(3) .step-n { width: 52px; height: 52px; font-size: 20px; margin-bottom: 24px; box-shadow: 0 8px 18px rgba(17,92,184,.2); }
+.public-main > .section:nth-of-type(3) .step:nth-child(1) .step-n { background: #1681ee; }
+.public-main > .section:nth-of-type(3) .step:nth-child(2) .step-n { background: #f47c2d; }
+.public-main > .section:nth-of-type(3) .step:nth-child(3) .step-n { background: #7357c8; }
+.public-main > .section:nth-of-type(3) .step:nth-child(4) .step-n { background: #159a70; }
 .public-main > .section:nth-of-type(3) .step strong { font-size: 18px; color: #102f49; }
 .public-main > .section:nth-of-type(3) .step p { font-size: 14px; line-height: 1.7; }
 .public-main > .section:nth-of-type(3) .step::after { content: '→'; position: absolute; right: 20px; top: 28px; color: #1681ee; font-size: 26px; font-weight: 800; opacity: .7; }
@@ -192,13 +196,13 @@ body {
   .public-main .feature-grid .card:hover .iconbox { background-color: rgba(255,255,255,.18); filter: brightness(0) invert(1); box-shadow: none; }
   .public-main .feature-grid .card:hover a { text-decoration: underline; text-underline-offset: 5px; }
   .public-main .step:hover { background: #115cb8; border-color: #115cb8; }
-  .public-main .step:nth-child(2):hover { background: #008a79; border-color: #008a79; }
-  .public-main .step:nth-child(3):hover { background: #e66e18; border-color: #e66e18; }
-  .public-main .step:nth-child(4):hover { background: #7357c8; border-color: #7357c8; }
+  .public-main .step:nth-child(2):hover { background: #e66e18; border-color: #e66e18; }
+  .public-main .step:nth-child(3):hover { background: #7357c8; border-color: #7357c8; }
+  .public-main .step:nth-child(4):hover { background: #159a70; border-color: #159a70; }
   .public-main .step:hover strong,
   .public-main .step:hover p,
   .public-main .step:hover::after { color: #fff; }
-  .public-main .step:hover .step-n { background: #fff; color: #115cb8; }
+  .public-main .step:hover .step-n { background: #fff; color: #102f49; box-shadow: none; }
   .public-main .cat-tile:hover { background: #115cb8 !important; border-color: #115cb8 !important; }
   .public-main .cat-tile:nth-child(4n+2):hover { background: #008a79 !important; }
   .public-main .cat-tile:nth-child(4n+3):hover { background: #e66e18 !important; }
@@ -218,7 +222,7 @@ body {
 @media (max-width: 760px) {
   .public-main > .hero { min-height: 690px; padding: 54px 0 48px; }
   .public-main > .hero::before { background: linear-gradient(180deg, rgba(8,31,51,.9), rgba(8,31,51,.7)), url('../assets/illustrations/01_konsultasi_pendidikan.webp') center/cover no-repeat; }
-  .public-main > .hero::before { background-image: linear-gradient(180deg, rgba(8,31,51,.92), rgba(8,31,51,.72)), url('../assets/update/sipakatau-service-v22.png'); background-position: center, 78% bottom; background-size: cover, 130%; }
+  .public-main > .hero::before { background-image: linear-gradient(180deg, rgba(8,31,51,.92), rgba(8,31,51,.72)), url('../assets/update/sipakatau-service-v22.webp'); background-position: center, 78% bottom; background-size: cover, 130%; }
   .public-main > .hero .hero-grid { display: block; }
   .public-main > .hero h1 { font-size: clamp(38px, 12vw, 54px); }
   .public-main > .hero .hero-visual { margin-top: 28px; }
