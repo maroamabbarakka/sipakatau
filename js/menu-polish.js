@@ -7,7 +7,7 @@
     const nav = header.querySelector('nav');
     if (!nav) return;
     header.dataset.menuReady = 'true';
-    const toggle = document.createElement('button');
+    const toggle = header.querySelector('.menu-toggle') || document.createElement('button');
     toggle.type = 'button';
     toggle.className = 'menu-toggle';
     toggle.style.display = 'inline-flex';
@@ -16,8 +16,8 @@
     toggle.style.height = '46px';
     toggle.setAttribute('aria-label', 'Buka menu navigasi');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.innerHTML = '<span></span><span></span><span></span>';
-    header.insertBefore(toggle, nav);
+    if (!toggle.children.length) toggle.innerHTML = '<span></span><span></span><span></span>';
+    if (!toggle.parentElement) header.insertBefore(toggle, nav);
     const drawer = document.createElement('aside');
     drawer.className = 'mobile-drawer';
     drawer.setAttribute('aria-label', 'Menu navigasi SIPAKATAU');
