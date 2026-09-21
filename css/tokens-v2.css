@@ -97,6 +97,7 @@ textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
 }
 
 @media (max-width: 760px) {
+  .site-header { display: flex !important; flex-wrap: nowrap; align-items: center; }
   .site-header nav { display: none !important; }
   .site-header .menu-toggle { display: inline-flex !important; }
 }
