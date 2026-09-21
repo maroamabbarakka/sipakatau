@@ -181,6 +181,13 @@ body {
 
 /* Shared interactive card motion, adapted from the supplied reference video. */
 @media (hover: hover) and (pointer: fine) {
+  .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(1):hover { background: #115cb8; border-color: #115cb8; }
+  .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(2):hover { background: #008a79; border-color: #008a79; }
+  .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(3):hover { background: #e66e18; border-color: #e66e18; }
+  .public-main > .section:nth-of-type(3) .step:nth-child(1):hover { background: #1681ee; border-color: #1681ee; }
+  .public-main > .section:nth-of-type(3) .step:nth-child(2):hover { background: #e66e18; border-color: #e66e18; }
+  .public-main > .section:nth-of-type(3) .step:nth-child(3):hover { background: #7357c8; border-color: #7357c8; }
+  .public-main > .section:nth-of-type(3) .step:nth-child(4):hover { background: #159a70; border-color: #159a70; }
   .public-main .card,
   .public-main .step,
   .public-main .cat-tile,
@@ -226,6 +233,13 @@ body {
 /* Contrast safety net: keep every interactive state readable despite the
    base component styles loaded before this editorial layer. */
 @media (hover: hover) and (pointer: fine) {
+  .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(1):hover { background: #115cb8 !important; }
+  .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(2):hover { background: #008a79 !important; }
+  .public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(3):hover { background: #e66e18 !important; }
+  .public-main > .section:nth-of-type(3) .step:nth-child(1):hover { background: #1681ee !important; }
+  .public-main > .section:nth-of-type(3) .step:nth-child(2):hover { background: #e66e18 !important; }
+  .public-main > .section:nth-of-type(3) .step:nth-child(3):hover { background: #7357c8 !important; }
+  .public-main > .section:nth-of-type(3) .step:nth-child(4):hover { background: #159a70 !important; }
   .public-main .feature-grid .card:hover h3,
   .public-main .feature-grid .card:hover p,
   .public-main .feature-grid .card:hover a { color: #fff !important; opacity: 1; }
