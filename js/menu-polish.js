@@ -10,6 +10,10 @@
     const toggle = document.createElement('button');
     toggle.type = 'button';
     toggle.className = 'menu-toggle';
+    toggle.style.display = 'inline-flex';
+    toggle.style.flex = '0 0 46px';
+    toggle.style.width = '46px';
+    toggle.style.height = '46px';
     toggle.setAttribute('aria-label', 'Buka menu navigasi');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.innerHTML = '<span></span><span></span><span></span>';
