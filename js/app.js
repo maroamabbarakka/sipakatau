@@ -138,15 +138,13 @@ function applyV21Visuals(){
   const description=document.querySelector('#f-description');
   if(description&&!description.dataset.voiceEnhanced){
    description.dataset.voiceEnhanced='true';
-   const tools=document.createElement('div');tools.className='report-voice-tools';
-   tools.innerHTML='<label class="report-consent"><input type="checkbox" data-report-voice-consent> Saya setuju memakai mikrofon untuk demo ini</label><div class="report-voice-actions"><button type="button" class="btn" data-report-dictate>Gunakan mikrofon</button><button type="button" class="btn" data-report-dictate-stop>Hentikan</button><button type="button" class="btn" data-report-dictate-use>Gunakan transkrip</button></div><small class="report-dictation-status" role="status">Teks hasil suara selalu dapat diperiksa sebelum dikirim.</small>';
-   description.parentElement.append(tools);
-   tools.querySelector('[data-report-voice-consent]')?.addEventListener('change',e=>window.SIPDictation?.setConsent(e.target.checked));
-   tools.querySelector('[data-report-dictate]')?.addEventListener('click',()=>window.SIPDictation?.start());
-   tools.querySelector('[data-report-dictate-stop]')?.addEventListener('click',()=>window.SIPDictation?.stop());
-   tools.querySelector('[data-report-dictate-use]')?.addEventListener('click',()=>{const text=window.SIPDictation?.useTranscript?.();if(text)description.value=[description.value,text].filter(Boolean).join(' ').slice(0,2500);description.dispatchEvent(new Event('input',{bubbles:true}));});
-   const update=event=>{const d=event.detail||{};const status=tools.querySelector('.report-dictation-status');if(status)status.textContent=d.final||d.interim||String(d);};
-   window.addEventListener('sip-dictation-preview',update,{once:false});window.addEventListener('sip-dictation-state',e=>{const status=tools.querySelector('.report-dictation-status');if(status)status.textContent='Status mikrofon: '+e.detail;});
+   const field=description.parentElement;field.classList.add('report-description-field');
+   const mic=document.createElement('button');mic.type='button';mic.className='report-mic-control';mic.setAttribute('aria-label','Mulai dikte suara');mic.setAttribute('title','Klik untuk mulai merekam suara');mic.innerHTML='<span aria-hidden="true">●</span><span class="sr-only">Mikrofon</span>';
+   const status=document.createElement('span');status.className='report-mic-status';status.setAttribute('role','status');status.textContent='Klik mikrofon untuk mendiktekan kronologi';
+   field.append(mic,status);
+   const updateState=e=>{const value=e.detail||'';const recording=['REQUESTING_PERMISSION','LISTENING','TRANSCRIBING'].includes(value);mic.classList.toggle('recording',recording);mic.setAttribute('aria-label',recording?'Hentikan perekaman':'Mulai dikte suara');mic.setAttribute('title',recording?'Klik untuk menghentikan perekaman':'Klik untuk mulai merekam suara');mic.innerHTML='<span aria-hidden="true">'+(recording?'■':'●')+'</span><span class="sr-only">'+(recording?'Hentikan perekaman':'Mikrofon')+'</span>';status.textContent=recording?'Merekam... klik tombol merah untuk berhenti':value==='REVIEW'?'Transkrip masuk. Silakan periksa dan koreksi.':value==='UNSUPPORTED'?'Pengenalan suara tidak didukung browser ini. Silakan mengetik.':'Klik mikrofon untuk mendiktekan kronologi';};
+   mic.addEventListener('click',()=>{const recording=window.SIPDictation?.state?.status&&['REQUESTING_PERMISSION','LISTENING','TRANSCRIBING'].includes(window.SIPDictation.state.status);if(recording)window.SIPDictation.stop();else{window.SIPDictation.setConsent(true);window.SIPDictation.start();}});
+   window.addEventListener('sip-dictation-state',updateState);window.addEventListener('sip-dictation-preview',e=>{const text=String(e.detail?.final||'').trim();if(text){description.value=text.slice(0,2500);description.dispatchEvent(new Event('input',{bubbles:true}));}});updateState({detail:window.SIPDictation?.state?.status||'UNSUPPORTED'});
   }
  }
  const visualMap=path==='/'?['assets/illustrations/01_konsultasi_pendidikan.webp','Ilustrasi konsultasi pendidikan']:path==='/pengaduan'?['assets/illustrations/02_form_dengan_voice.webp','Ilustrasi formulir dengan bantuan suara']:path==='/bantuan-anak'?['assets/illustrations/03_sekolah_inklusif.webp','Ilustrasi sekolah inklusif']:['assets/illustrations/04_routing_pengaduan.webp','Ilustrasi alur routing pengaduan'];

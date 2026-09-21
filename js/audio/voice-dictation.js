@@ -13,7 +13,7 @@
     if (!consent) return report('CONSENT_REQUIRED');
     if (window.isSecureContext === false) return report('ERROR');
     abort(); state.finalText = ''; state.interim = ''; seen.clear();
-    const active = new Ctor(); recognition = active; active.lang = 'id-ID'; active.continuous = false; active.interimResults = true; active.maxAlternatives = 1;
+    const active = new Ctor(); recognition = active; active.lang = 'id-ID'; active.continuous = true; active.interimResults = true; active.maxAlternatives = 1;
     active.onstart = () => report('LISTENING');
     active.onresult = event => {
       let interim = '';
