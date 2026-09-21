@@ -264,13 +264,13 @@ body {
 .site-header nav a:not(.btn)::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 3px; border-radius: 99px; background: #1681ee; transform: scaleX(0); transform-origin: center; transition: transform .22s ease; }
 .site-header nav a:not(.btn):hover::after, .site-header nav a.current::after { transform: scaleX(1); }
 .site-header nav a:not(.btn):hover { color: #115cb8; text-decoration: none; }
-.menu-toggle, .mobile-drawer, .menu-backdrop { display: none; }
+.menu-toggle, .mobile-drawer, .menu-backdrop { display: none !important; }
 
 @media (max-width: 760px) {
   .site-header { min-height: 76px; padding: 10px 16px; align-items: center; }
   .site-header .brand { flex: 1; min-width: 0; }
   .site-header nav { display: none; }
-  .menu-toggle { display: inline-flex; width: 46px; height: 46px; margin-left: 10px; border: 1px solid #d5e3ee; border-radius: 13px; background: #fff; flex-direction: column; justify-content: center; align-items: center; gap: 5px; z-index: 121; }
+  .menu-toggle { display: inline-flex !important; width: 46px; height: 46px; margin-left: 10px; border: 1px solid #d5e3ee; border-radius: 13px; background: #fff; flex-direction: column; justify-content: center; align-items: center; gap: 5px; z-index: 121; }
   .menu-toggle span { display: block; width: 21px; height: 2px; border-radius: 9px; background: #102f49; transition: transform .2s ease, opacity .2s ease; }
   .menu-open .menu-toggle { background: #102f49; border-color: #102f49; }
   .menu-open .menu-toggle span { background: #fff; }
