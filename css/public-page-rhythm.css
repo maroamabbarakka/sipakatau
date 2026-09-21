@@ -120,6 +120,20 @@ body {
 .public-main > .hero .mock-phone { display: none; }
 .public-main > .hero .hero-float { position: static; display: inline-block; color: #173253; margin: 0 0 12px; }
 .public-main > .section:nth-of-type(2) { background: #fff; }
+.public-main > .section:nth-of-type(2) .feature-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+.public-main > .section:nth-of-type(2) .feature-grid .card { min-height: 300px; padding: 30px; position: relative; overflow: hidden; border-top: 5px solid #1681ee; }
+.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(2) { border-top-color: #008a79; background: linear-gradient(145deg,#fff,#effbf8); }
+.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(3) { border-top-color: #f47c2d; background: linear-gradient(145deg,#fff,#fff6ed); }
+.public-main > .section:nth-of-type(2) .feature-grid .card::after { content: ''; position: absolute; width: 150px; height: 150px; border-radius: 50%; right: -65px; bottom: -72px; background: rgba(22,129,238,.08); pointer-events: none; }
+.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(2)::after { background: rgba(0,138,121,.09); }
+.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(3)::after { background: rgba(244,124,45,.1); }
+.public-main > .section:nth-of-type(2) .iconbox { width: 68px; height: 68px; border-radius: 20px; background-color: #e4f1ff; background-position: center; background-repeat: no-repeat; background-size: 48px; font-size: 0; box-shadow: 0 10px 22px rgba(17,92,184,.13); }
+.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(1) .iconbox { background-image: url('../assets/update/icon-1.png'); }
+.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(2) .iconbox { background-color: #e2f7f2; background-image: url('../assets/update/icon-2.png'); }
+.public-main > .section:nth-of-type(2) .feature-grid .card:nth-child(3) .iconbox { background-color: #fff0df; background-image: url('../assets/update/icon-3.png'); }
+.public-main > .section:nth-of-type(2) .feature-grid h3 { font-size: 21px; margin-top: 22px; }
+.public-main > .section:nth-of-type(2) .feature-grid p { font-size: 15px; line-height: 1.75; }
+.public-main > .section:nth-of-type(2) .feature-grid a { display: inline-flex; margin-top: 10px; font-size: 15px; font-weight: 750; position: relative; z-index: 1; }
 .public-main > .section:nth-of-type(3) { background: #eaf4fc; }
 .public-main > .section:nth-of-type(4) { background: #fff; }
 .public-main > .section:nth-of-type(5) { background: #102f49; color: #fff; }
@@ -153,6 +167,8 @@ body {
   .public-main > .hero h1 { font-size: clamp(38px, 12vw, 54px); }
   .public-main > .hero .hero-visual { margin-top: 28px; }
   .public-main > .section:nth-of-type(4) .catalogue { grid-template-columns: 1fr; }
+  .public-main > .section:nth-of-type(2) .feature-grid { grid-template-columns: 1fr; }
+  .public-main > .section:nth-of-type(2) .feature-grid .card { min-height: 260px; }
   .public-main > .section:nth-of-type(3) .step-row { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 
