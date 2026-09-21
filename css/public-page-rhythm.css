@@ -137,14 +137,20 @@ body {
 .public-main > .section:nth-of-type(3) { background: #eaf4fc; }
 .public-main > .section:nth-of-type(4) { background: #fff; }
 .public-main > .section:nth-of-type(5) { background: #102f49; color: #fff; }
-.public-main > .section:nth-of-type(5) { background: linear-gradient(135deg,#eaf4fc 0%,#fff7ec 100%); color: #173253; padding-bottom: 58px; }
+.public-main > .section:nth-of-type(5) { background: linear-gradient(135deg,#e8f8ef 0%,#f6fff9 58%,#eefaf3 100%); color: #173253; padding: 72px 0 64px; position: relative; overflow: hidden; }
+.public-main > .section:nth-of-type(5)::before { content: ''; position: absolute; width: 330px; height: 330px; border-radius: 50%; right: -120px; top: -150px; background: rgba(21,154,112,.1); pointer-events: none; }
+.public-main > .section:nth-of-type(5)::after { content: ''; position: absolute; width: 220px; height: 220px; border-radius: 50%; left: -120px; bottom: -130px; background: rgba(22,129,238,.06); pointer-events: none; }
 .public-main > .section:nth-of-type(5) h2, .public-main > .section:nth-of-type(5) .section-desc { color: #102f49; }
-.public-main > .section:nth-of-type(5) .card { background: #fff; border-color: #d9e6f1; color: #173253; box-shadow: 0 16px 36px rgba(16,47,73,.1); }
+.public-main > .section:nth-of-type(5) .card { background: rgba(255,255,255,.94); border: 1px solid #c8e8d6; border-top: 5px solid #159a70; color: #173253; box-shadow: 0 18px 42px rgba(21,101,72,.13); padding: 30px 32px; position: relative; z-index: 1; }
 .public-main > .section:nth-of-type(5) .card h3, .public-main > .section:nth-of-type(5) .card p { color: #173253; }
-.public-main > .section:nth-of-type(5) .eyebrow { color: #e66e18; }
-.public-main > .section:nth-of-type(5) .btn { border-color: #115cb8; color: #115cb8; background: #fff; }
-.public-main > .section:nth-of-type(5) .btn.primary { background: #115cb8; color: #fff; }
-.public-main > .section:nth-of-type(5) .btn:hover { background: #dff0ff; color: #102f49; }
+.public-main > .section:nth-of-type(5) .eyebrow { color: #07815c; }
+.public-main > .section:nth-of-type(5) .btn { border: 1px solid #159a70; color: #087052; background: #fff; min-height: 48px; padding-inline: 20px; }
+.public-main > .section:nth-of-type(5) .btn.primary { background: #159a70; color: #fff; border-color: #159a70; box-shadow: 0 9px 20px rgba(21,154,112,.2); }
+.public-main > .section:nth-of-type(5) .btn:hover { background: #d9f5e8; color: #07563f; border-color: #087052; transform: translateY(-2px); }
+.public-main > .section:nth-of-type(5) .btn.primary:hover { background: #087052; color: #fff; }
+.public-main > .section:nth-of-type(5) .stack { gap: 14px; }
+.public-main > .section:nth-of-type(5) .stack > div { display: flex; gap: 10px; align-items: flex-start; color: #28566a; line-height: 1.55; }
+.public-main > .section:nth-of-type(5) .stack > div::first-letter { color: #159a70; }
 .public-main > .section .card, .public-main > .section .step, .public-main > .section .cat-tile { transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
 .public-main > .section .card:hover, .public-main > .section .step:hover, .public-main > .section .cat-tile:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(19,56,101,.13); }
 .public-main > .section:nth-of-type(4) .catalogue { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
