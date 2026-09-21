@@ -16,7 +16,7 @@
     toggle.style.height = '46px';
     toggle.setAttribute('aria-label', 'Buka menu navigasi');
     toggle.setAttribute('aria-expanded', 'false');
-    if (!toggle.children.length) toggle.innerHTML = '<span></span><span></span><span></span>';
+    toggle.innerHTML = '<span aria-hidden="true">☰</span><span class="sr-only">Menu</span>';
     if (!toggle.parentElement) header.insertBefore(toggle, nav);
     const drawer = document.createElement('aside');
     drawer.className = 'mobile-drawer';

@@ -264,7 +264,8 @@ body {
 .site-header nav a:not(.btn)::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 3px; border-radius: 99px; background: #1681ee; transform: scaleX(0); transform-origin: center; transition: transform .22s ease; }
 .site-header nav a:not(.btn):hover::after, .site-header nav a.current::after { transform: scaleX(1); }
 .site-header nav a:not(.btn):hover { color: #115cb8; text-decoration: none; }
-.menu-toggle, .mobile-drawer, .menu-backdrop { display: none !important; }
+.mobile-drawer, .menu-backdrop { display: none !important; }
+@media (min-width: 761px) { .menu-toggle { display: none !important; } }
 
 @media (max-width: 760px) {
   .site-header { min-height: 76px; padding: 10px 16px; align-items: center; }
@@ -347,3 +348,42 @@ body {
 /* Reporting panel refinement: one clear audio action and comfortable mobile rhythm. */
 .report-side-guide{padding:20px}.report-side-guide h2{font-size:clamp(23px,2.2vw,29px);line-height:1.15}.report-side-guide p{max-width:29ch;margin:10px 0 16px}.report-side-actions{gap:10px}.report-side-actions .btn{font-size:13px;letter-spacing:-.01em}.report-side-actions .audio-guide-button{min-height:44px}
 @media(max-width:760px){.report-side-guide{padding:16px;border-radius:20px}.report-side-art{float:none;width:100%;height:145px;margin:0 0 16px}.report-side-guide h2{font-size:24px;line-height:1.15}.report-side-guide p{max-width:44ch;font-size:13px;line-height:1.6;margin:9px 0 15px}.report-side-actions{grid-template-columns:1fr 1fr;gap:8px}.report-side-actions .audio-guide-button{grid-column:1/-1}.report-side-actions .btn{min-height:45px;padding:10px 9px}.report-audio-status{margin-top:11px!important}.report-wizard-panel{padding:16px!important}.report-wizard-panel .wizard-progress{margin-bottom:22px}}
+
+/* Final hero composition: copy, illustration, and supporting actions have separate roles. */
+.public-main > .hero .hero-visual--service{
+  display:grid;
+  gap:14px;
+  width:min(100%,530px);
+  margin-left:auto;
+  padding:14px;
+  background:rgba(222,241,249,.13);
+  border:1px solid rgba(232,247,255,.30);
+  border-radius:26px;
+  box-shadow:0 28px 62px rgba(2,23,40,.25);
+  backdrop-filter:blur(7px);
+}
+.public-main > .hero .hero-media{margin:0;overflow:hidden;border-radius:18px;background:#dceef5;aspect-ratio:16/9}
+.public-main > .hero .hero-service-image{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.public-main > .hero .hero-service-meta{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:2px 2px 0}
+.public-main > .hero .hero-category-summary{display:grid;gap:2px;min-width:0;color:#fff}
+.public-main > .hero .hero-category-summary span{color:#ffc27b;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.public-main > .hero .hero-category-summary strong{font-size:18px;line-height:1.15;color:#fff}
+.public-main > .hero .hero-category-summary small{color:#dbeaf4;font-size:13px}
+.public-main > .hero .hero-audio-button{flex:0 0 auto;min-height:44px;padding:10px 14px;background:rgba(14,48,74,.80);border-color:rgba(255,255,255,.45);color:#fff;white-space:nowrap}
+.public-main > .hero .hero-audio-button:hover,.public-main > .hero .hero-audio-button:focus-visible{background:#fff;color:#102f49;border-color:#fff;transform:translateY(-1px)}
+.public-main > .hero .hero-float,.public-main > .hero .hero-visual--service .v21-illustration,.public-main > .hero .hero-visual--service .audio-guide-button{display:none!important}
+@media(max-width:760px){
+  .public-main > .hero .hero-visual--service{width:100%;margin:28px 0 0;padding:11px;border-radius:20px;gap:12px}
+  .public-main > .hero::before{background-image:linear-gradient(180deg,rgba(8,31,51,.98) 0%,rgba(8,31,51,.94) 58%,rgba(8,31,51,.88) 100%),url('../assets/update/sipakatau-service-v22.webp');background-position:center,right bottom;background-size:cover,auto 52%;background-repeat:no-repeat}
+  .public-main > .hero .hero-media{border-radius:14px}
+  .public-main > .hero .hero-service-meta{align-items:stretch;flex-direction:column;padding:1px}
+  .public-main > .hero .hero-category-summary strong{font-size:17px}
+  .public-main > .hero .hero-audio-button{width:100%;min-height:48px}
+  .site-header{display:flex!important;min-height:72px;padding:9px 16px;align-items:center;justify-content:space-between}
+  .site-header .brand{display:block!important;flex:1 1 auto;width:auto!important;min-width:0}
+  .site-header nav{display:none!important}
+  .site-header .menu-toggle{display:inline-flex!important;visibility:visible!important;opacity:1!important;position:relative!important;width:46px;height:46px;flex:0 0 46px;margin-left:12px;border:1px solid #d5e3ee;border-radius:13px;background:#fff;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+  .site-header .menu-toggle span:first-child{display:none!important}
+  .site-header .menu-toggle .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .site-header .menu-toggle::before{content:'☰';display:block;color:#102f49;font-size:27px;line-height:1;font-weight:700}
+}

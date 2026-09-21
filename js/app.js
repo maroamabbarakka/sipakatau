@@ -120,6 +120,11 @@ window.addEventListener('hashchange',()=>{ephemeral.menuOpen=false;ephemeral.pag
 window.SIPAKATAU_TEST={reset(){state=defaults();persist();render()},getState:()=>state,calculate:costCalc,categories:()=>state.categories,canBrowse,transition};
 function applyV21Visuals(){
  const path=route();
+ if(path==='/'){
+  const audioButton=document.querySelector('[data-hero-audio]');
+  if(audioButton){audioButton.addEventListener('click',()=>{const result=window.SIPAudioGuide?.speak('publicIntro');audioButton.textContent=result==='SPEAKING'?'⏹ Hentikan panduan':'🔊 Dengarkan panduan'})}
+  return;
+ }
  if(path==='/pengaduan'){
   const wizardPanel=document.querySelector('.wizard-progress')?.closest('.panel');
   const pageHead=document.querySelector('.page-head');
@@ -150,6 +155,15 @@ function applyV21Visuals(){
  const target=document.querySelector('.hero-visual,.panel');
  if(target&&path!=='/pengaduan'&&!target.querySelector('.v21-illustration')){const img=document.createElement('img');img.className='v21-illustration';img.src=visualMap[0];img.alt=visualMap[1];target.prepend(img);if(window.SIPAudioGuide&&path!=='/dashboard'){const b=document.createElement('button');b.type='button';b.className='btn audio-guide-button';b.textContent='🔊 Dengarkan panduan';b.addEventListener('click',()=>{const key=path==='/'?'publicIntro':path==='/pengaduan'?'formStep':path==='/lacak'?'tracking':'privacy';const result=window.SIPAudioGuide.speak(key);if(result==='NO_INDONESIAN_VOICE'||result==='UNSUPPORTED')b.textContent='📖 Baca panduan teks';else b.textContent=result==='SPEAKING'?'⏹ Hentikan panduan':'🔊 Dengarkan panduan'});target.append(b)}}
 }
+const legacyHome=home;
+home=function homeFinal(){
+ const legacy=legacyHome();
+ const visualStart=legacy.indexOf('<div class="hero-visual">');
+ const visualEnd=legacy.indexOf('</div></div></section><section class="section">',visualStart);
+ if(visualStart<0||visualEnd<0)return legacy;
+ const visual=`<div class="hero-visual hero-visual--service"><figure class="hero-media"><img class="hero-service-image" src="assets/illustrations/01_konsultasi_pendidikan.webp" alt="Petugas pendidikan berdiskusi dengan orang tua dan siswa"></figure><div class="hero-service-meta"><div class="hero-category-summary"><span>Layanan terpadu</span><strong>17 kategori layanan</strong><small>Satu pusat pengelolaan</small></div><button type="button" class="btn hero-audio-button" data-hero-audio>🔊 Dengarkan panduan</button></div></div>`;
+ return legacy.slice(0,visualStart)+visual+legacy.slice(visualEnd+6);
+};
 const baseRender=render; render=()=>{baseRender();applyV21Visuals()};
 render();
 })();
