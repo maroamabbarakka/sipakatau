@@ -74,3 +74,73 @@ body {
     font-size: 10px;
   }
 }
+
+/* V2.2 editorial public-page composition: reuse existing renderer/data while
+   changing the visual rhythm decisively. */
+.public-main > .hero {
+  min-height: 620px;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  background: #102f49;
+  color: #fff;
+  overflow: hidden;
+}
+.public-main > .hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(90deg, rgba(8,31,51,.96) 0%, rgba(10,43,68,.82) 45%, rgba(10,43,68,.28) 100%), url('../assets/illustrations/01_konsultasi_pendidikan.webp') center/cover no-repeat;
+  transform: scale(1.02);
+}
+.public-main > .hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 110px;
+  z-index: -1;
+  background: linear-gradient(transparent, rgba(8,31,51,.42));
+}
+.public-main > .hero .hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr); gap: 52px; }
+.public-main > .hero .eyebrow { color: #ffc27b; }
+.public-main > .hero h1 { color: #fff; font-size: clamp(44px, 6vw, 76px); max-width: 720px; }
+.public-main > .hero h1 em { color: #ffb45d; }
+.public-main > .hero p, .public-main > .hero .hero-note { color: #e4eff8; }
+.public-main > .hero .btn:not(.primary) { color: #fff; border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.08); }
+.public-main > .hero .hero-visual { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.28); backdrop-filter: blur(8px); box-shadow: 0 28px 80px rgba(0,0,0,.24); }
+.public-main > .hero .hero-visual .v21-illustration { width: 100%; max-height: 255px; margin-bottom: 8px; }
+.public-main > .hero .mock-phone { display: none; }
+.public-main > .hero .hero-float { position: static; display: inline-block; color: #173253; margin: 0 0 12px; }
+.public-main > .section:nth-of-type(2) { background: #fff; }
+.public-main > .section:nth-of-type(3) { background: #eaf4fc; }
+.public-main > .section:nth-of-type(4) { background: #fff; }
+.public-main > .section:nth-of-type(5) { background: #102f49; color: #fff; }
+.public-main > .section:nth-of-type(5) h2, .public-main > .section:nth-of-type(5) .section-desc { color: #fff; }
+.public-main > .section:nth-of-type(5) .card { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); color: #fff; }
+.public-main > .section:nth-of-type(5) .card h3, .public-main > .section:nth-of-type(5) .card p { color: #fff; }
+.public-main > .section:nth-of-type(5) .eyebrow { color: #ffc27b; }
+.public-main > .section:nth-of-type(5) .btn { border-color: rgba(255,255,255,.5); color: #fff; }
+.public-main > .section .card, .public-main > .section .step, .public-main > .section .cat-tile { transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+.public-main > .section .card:hover, .public-main > .section .step:hover, .public-main > .section .cat-tile:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(19,56,101,.13); }
+.public-main > .section:nth-of-type(4) .catalogue { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.public-main > .section:nth-of-type(4) .cat-tile { min-height: 78px; align-items: center; }
+.public-main > .section:nth-of-type(4) .cat-tile::after { content: '→'; margin-left: auto; color: var(--blue); font-size: 18px; }
+.public-main > .section:nth-of-type(3) .step-row { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.public-main > .section:nth-of-type(3) .step { min-height: 150px; }
+.public-main > .section:nth-of-type(5) .grid-two { align-items: center; }
+
+@media (max-width: 760px) {
+  .public-main > .hero { min-height: 690px; padding: 54px 0 48px; }
+  .public-main > .hero::before { background: linear-gradient(180deg, rgba(8,31,51,.9), rgba(8,31,51,.7)), url('../assets/illustrations/01_konsultasi_pendidikan.webp') center/cover no-repeat; }
+  .public-main > .hero .hero-grid { display: block; }
+  .public-main > .hero h1 { font-size: clamp(38px, 12vw, 54px); }
+  .public-main > .hero .hero-visual { margin-top: 28px; }
+  .public-main > .section:nth-of-type(4) .catalogue { grid-template-columns: 1fr; }
+  .public-main > .section:nth-of-type(3) .step-row { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .public-main > .section .card, .public-main > .section .step, .public-main > .section .cat-tile { transition: none; }
+}
