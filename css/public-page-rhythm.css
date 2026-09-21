@@ -216,6 +216,27 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .public-main .card, .public-main .step, .public-main .cat-tile { transition: none !important; }
 }
+
+/* Contrast safety net: keep every interactive state readable despite the
+   base component styles loaded before this editorial layer. */
+@media (hover: hover) and (pointer: fine) {
+  .public-main .feature-grid .card:hover h3,
+  .public-main .feature-grid .card:hover p,
+  .public-main .feature-grid .card:hover a { color: #fff !important; opacity: 1; }
+  .public-main .feature-grid .card:hover .iconbox { background-color: #fff; filter: none; opacity: 1; }
+  .public-main .step:hover strong,
+  .public-main .step:hover p,
+  .public-main .step:hover .step-n,
+  .public-main .step:hover::after { color: #fff !important; opacity: 1; }
+  .public-main .step:hover .step-n { background: rgba(255,255,255,.96); color: #102f49 !important; }
+  .public-main .cat-tile:hover > span:nth-child(2),
+  .public-main .cat-tile:hover > span:nth-child(2) strong,
+  .public-main .cat-tile:hover small,
+  .public-main .cat-tile:hover::after { color: #fff !important; opacity: 1; }
+}
+.public-main .feature-grid .card:focus-within,
+.public-main .step:focus-within,
+.public-main .cat-tile:focus-visible { outline: 3px solid #f47c2d; outline-offset: 4px; }
 .public-main > .section:nth-of-type(5) .grid-two { align-items: center; }
 .footer { margin-top: 0; }
 
