@@ -129,11 +129,10 @@ function applyV21Visuals(){
    pageHead?.classList.add('report-page-head');
    const intro=document.createElement('aside');
    intro.className='report-side-guide';
-   intro.innerHTML='<div class="report-side-art"><img src="assets/illustrations/02_form_dengan_voice.webp" alt="Ilustrasi pengisian pengaduan dengan bantuan suara"></div><span class="eyebrow">Pendamping pelaporan</span><h2>Ceritakan dengan tenang.</h2><p>Ikuti lima menit langkah sederhana. Anda dapat kembali, membaca panduan, atau menggunakan suara bila perangkat mendukung.</p><div class="report-side-actions"><a class="btn full" href="#/">Kembali ke beranda</a><a class="btn full" href="#/panduan">Buka pusat bantuan</a><button type="button" class="btn full audio-guide-button" data-report-audio="formStep">Dengarkan panduan</button><button type="button" class="btn full" data-report-audio-stop>Hentikan audio</button></div><p class="report-audio-status" role="status">Audio hanya membacakan panduan, bukan isi laporan.</p>';
+   intro.innerHTML='<div class="report-side-art"><img src="assets/illustrations/02_form_dengan_voice.webp" alt="Ilustrasi pengisian pengaduan dengan bantuan suara"></div><span class="eyebrow">Pendamping pelaporan</span><h2>Ceritakan dengan tenang.</h2><p>Ikuti lima menit langkah sederhana. Anda dapat kembali, membaca panduan, atau menggunakan suara bila perangkat mendukung.</p><div class="report-side-actions"><a class="btn full" href="#/">Kembali ke beranda</a><a class="btn full" href="#/panduan">Buka pusat bantuan</a><button type="button" class="btn full audio-guide-button" data-report-audio="formStep">Dengarkan panduan</button></div><p class="report-audio-status" role="status">Audio hanya membacakan panduan, bukan isi laporan.</p>';
    wizardPanel.parentElement?.insertBefore(intro,wizardPanel);
    const guideButton=intro.querySelector('[data-report-audio]');
    guideButton?.addEventListener('click',()=>{const result=window.SIPAudioGuide?.speak('formStep');if(result==='NO_INDONESIAN_VOICE'||result==='UNSUPPORTED')guideButton.textContent='Baca panduan teks';else guideButton.textContent=result==='SPEAKING'?'Sedang diputar...':'Dengarkan panduan';});
-   intro.querySelector('[data-report-audio-stop]')?.addEventListener('click',()=>window.SIPAudioGuide?.stop());
   }
   const description=document.querySelector('#f-description');
   if(description&&!description.dataset.voiceEnhanced){
