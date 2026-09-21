@@ -168,6 +168,50 @@ body {
 .public-main > .section:nth-of-type(3) .step strong { font-size: 18px; color: #102f49; }
 .public-main > .section:nth-of-type(3) .step p { font-size: 14px; line-height: 1.7; }
 .public-main > .section:nth-of-type(3) .step::after { content: '→'; position: absolute; right: 20px; top: 28px; color: #1681ee; font-size: 26px; font-weight: 800; opacity: .7; }
+
+/* Shared interactive card motion, adapted from the supplied reference video. */
+@media (hover: hover) and (pointer: fine) {
+  .public-main .card,
+  .public-main .step,
+  .public-main .cat-tile,
+  .public-main .feature-grid a {
+    transition: transform .32s cubic-bezier(.2,.75,.25,1), background-color .32s ease, color .25s ease, box-shadow .32s ease, border-color .25s ease;
+  }
+  .public-main .card:hover,
+  .public-main .step:hover,
+  .public-main .cat-tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 42px rgba(16,47,73,.18);
+  }
+  .public-main .feature-grid .card:hover { background: #115cb8; border-color: #115cb8; }
+  .public-main .feature-grid .card:nth-child(2):hover { background: #008a79; border-color: #008a79; }
+  .public-main .feature-grid .card:nth-child(3):hover { background: #e66e18; border-color: #e66e18; }
+  .public-main .feature-grid .card:hover h3,
+  .public-main .feature-grid .card:hover p,
+  .public-main .feature-grid .card:hover a { color: #fff; }
+  .public-main .feature-grid .card:hover .iconbox { background-color: rgba(255,255,255,.18); filter: brightness(0) invert(1); box-shadow: none; }
+  .public-main .feature-grid .card:hover a { text-decoration: underline; text-underline-offset: 5px; }
+  .public-main .step:hover { background: #115cb8; border-color: #115cb8; }
+  .public-main .step:nth-child(2):hover { background: #008a79; border-color: #008a79; }
+  .public-main .step:nth-child(3):hover { background: #e66e18; border-color: #e66e18; }
+  .public-main .step:nth-child(4):hover { background: #7357c8; border-color: #7357c8; }
+  .public-main .step:hover strong,
+  .public-main .step:hover p,
+  .public-main .step:hover::after { color: #fff; }
+  .public-main .step:hover .step-n { background: #fff; color: #115cb8; }
+  .public-main .cat-tile:hover { background: #115cb8 !important; border-color: #115cb8 !important; }
+  .public-main .cat-tile:nth-child(4n+2):hover { background: #008a79 !important; }
+  .public-main .cat-tile:nth-child(4n+3):hover { background: #e66e18 !important; }
+  .public-main .cat-tile:nth-child(4n+4):hover { background: #7357c8 !important; }
+  .public-main .cat-tile:hover > span:nth-child(2),
+  .public-main .cat-tile:hover small,
+  .public-main .cat-tile:hover::after { color: #fff; }
+  .public-main .cat-tile:hover .cat-num { background: rgba(255,255,255,.2); color: #fff; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .public-main .card, .public-main .step, .public-main .cat-tile { transition: none !important; }
+}
 .public-main > .section:nth-of-type(5) .grid-two { align-items: center; }
 .footer { margin-top: 0; }
 
